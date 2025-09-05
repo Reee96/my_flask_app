@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>お問い合わせフォーム</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>お問い合わせフォーム</h1>
+        {% if message_sent %}
+            <p class="success">送信完了しました！</p>
+        {% endif %}
+        <form method="POST">
+            <label for="name">名前</label>
+            <input type="text" id="name" name="name" placeholder="あなたの名前" required>
+
+            <label for="email">メール</label>
+            <input type="email" id="email" name="email" placeholder="example@example.com" required>
+
+            <label for="message">メッセージ</label>
+            <textarea id="message" name="message" placeholder="メッセージを入力" required></textarea>
+
+            <button type="submit">送信</button>
+        </form>
+    </div>
+</body>
+</html>
